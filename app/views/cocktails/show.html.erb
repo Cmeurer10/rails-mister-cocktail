@@ -8,7 +8,11 @@
     </p>
     <ul>
       <% @cocktail.doses.each do |dose| %>
-        <li><%= dose %></li>
+        <li>
+          <%= dose.ingredient.name %>: <%= dose.description %>
+          | <%= link_to 'Delete', "/doses/#{dose.id}", 
+          method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
       <% end %>
     </ul>
     <%= link_to 'New dose', "/cocktails/#{@cocktail.id}/doses/new" %>
