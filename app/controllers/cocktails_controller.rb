@@ -51,6 +51,7 @@ class CocktailsController < ApplicationController
   # DELETE /cocktails/1.json
   def destroy
     @cocktail.destroy
+    redirect_to cocktails_path
   end
 
   private
