@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :cocktails, except: [:edit, :update] do
-    resources :doses, only: [:create, :destroy]
+    resources :doses, only: [:new, :create]
   end
+
+  delete 'doses/:id', to: 'doses#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

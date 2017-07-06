@@ -25,7 +25,12 @@ class CocktailsController < ApplicationController
   # POST /cocktails.json
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.save ? redirect_to @cocktail : render :new
+    if @cocktail.valid?
+      @cocktail.save
+      redirect_to @cocktail
+    else
+      render :new
+    end
   end
 
   # PATCH/PUT /cocktails/1
