@@ -45,6 +45,10 @@ gem 'figaro'
 # Allows picture uploading
 gem 'cloudinary'
 
+# Allows assigning pictures from Cloudinary to objects
+gem 'carrierwave', '~> 0.11.2'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
