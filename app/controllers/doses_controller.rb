@@ -8,7 +8,8 @@ class DosesController < ApplicationController
       redirect_to @cocktail
     else
       render :new
-    end  end
+    end
+  end
 
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
